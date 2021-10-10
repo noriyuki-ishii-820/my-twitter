@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./style.css"
 
-class makeTweet extends Component {
-
+class makeTweet extends Component{
+    
     constructor (props) {
         super(props)
         this.state = {
@@ -21,11 +21,15 @@ class makeTweet extends Component {
 
         const tweet = {
             tweet: this.state.tweet,
+            email: this.props.name.email,
+            username: this.props.name.first_name + " " + this.props.name.last_name,
+            time: Date.now()
         }
 
         console.log(tweet);
     }
     render() {
+    
         return (
             <div className="dashboardCard card cardBackground">
                 <form noValidate onSubmit={this.onSubmit}>

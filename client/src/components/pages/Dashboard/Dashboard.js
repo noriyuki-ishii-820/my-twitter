@@ -23,6 +23,7 @@ class DashBoard extends Component {
             last_name: decoded.last_name,
             email: decoded.email
         })
+       
     }
     
     render() {
@@ -34,7 +35,7 @@ class DashBoard extends Component {
                              Welcome { this.state.first_name } { this.state.last_name }
                         </h1>
                         <div className="d-flex flex-row-reverse">
-                            <Maketweet />
+                            <Maketweet  name={this.state}/>
                         </div>
                     </div>
             </div>

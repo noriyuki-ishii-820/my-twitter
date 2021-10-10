@@ -24,6 +24,7 @@ class Login extends Component {
         }
         loginUser(user).then(res => {
             if(res) {
+                localStorage.setItem("email", user.email)
                 this.props.history.push('/dashboard');
             }
             else {

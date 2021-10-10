@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import jwt_decode from 'jwt-decode';
 import Sidebar from "../../Sidebar/Sidebar";
 import Maketweet from "../../makeTweet/makeTweet"
+import Tweets from "../../Tweets/Tweets"
 
 
 class DashBoard extends Component {
@@ -28,7 +29,7 @@ class DashBoard extends Component {
     
     render() {
         return (
-            <div className="container-fluid pl-0">
+            <div className="container-fluid">
                     <Sidebar />
                     <div>
                         <h1>
@@ -36,6 +37,7 @@ class DashBoard extends Component {
                         </h1>
                         <div className="d-flex flex-row-reverse">
                             <Maketweet  name={this.state}/>
+                            <Tweets />
                         </div>
                     </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { addTweet } from "../Functions/tweetFunctions"
 import "./style.css"
 
 class makeTweet extends Component{
@@ -19,14 +20,25 @@ class makeTweet extends Component{
     onSubmit = (e) => {
         e.preventDefault();
 
+        if (this.state.tweet === ""){
+            alert("input is empty")
+            return
+        }
+
+        const date = new Intl.DateTimeFormat("en-GB",{
+            year: "numeric",
+            month: "long",
+            day: "2-digit"
+            }).format(Date.now())
+
         const tweet = {
             tweet: this.state.tweet,
             email: this.props.name.email,
             username: this.props.name.first_name + " " + this.props.name.last_name,
-            time: Date.now()
-        }
+            time: date,
+        }       
 
-        console.log(tweet);
+        addTweet(tweet)
     }
     render() {
     

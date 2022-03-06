@@ -23,7 +23,7 @@ class Tweets extends Component {
 
         return (
             <div>
-                {this.state.tweet.map((each,i)=> {
+                {this.state.tweet.slice(0).reverse().map((each,i)=> {
                     return <div>
                                 <h5>{each.tweet}</h5>
                                 <h6>posted by {each.username} on {each.time}</h6>

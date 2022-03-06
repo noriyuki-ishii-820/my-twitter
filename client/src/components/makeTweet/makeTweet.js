@@ -39,6 +39,8 @@ class makeTweet extends Component{
         }       
 
         addTweet(tweet)
+
+        window.location.reload();
     }
     render() {
     

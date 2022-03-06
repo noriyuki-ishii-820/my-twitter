@@ -3,7 +3,7 @@ import jwt_decode from 'jwt-decode';
 import Sidebar from "../../Sidebar/Sidebar";
 import Maketweet from "../../makeTweet/makeTweet"
 import Tweets from "../../Tweets/Tweets"
-
+import "./Dashboard.css"
 
 class DashBoard extends Component {
     constructor() {
@@ -29,14 +29,14 @@ class DashBoard extends Component {
     
     render() {
         return (
-            <div className="container-fluid">
+            <div className="DashboardContainer">
                     <Sidebar />
                     <div>
                         <h1>
                              Welcome { this.state.first_name } { this.state.last_name }
                         </h1>
-                        <div className="d-flex flex-row-reverse">
-                            <Maketweet  name={this.state}/>
+                        <div>
+                            <Maketweet name={this.state}/>
                             <Tweets />
                         </div>
                     </div>

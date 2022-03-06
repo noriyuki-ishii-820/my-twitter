@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import { getAllTweets } from "../Functions/tweetFunctions"
 
+import "./Tweets.css"
+
 class Tweets extends Component {
     constructor() {
         super()
@@ -19,12 +21,10 @@ class Tweets extends Component {
 
 
     render(){
-        console.log(this.state)
-
         return (
-            <div>
+            <div >
                 {this.state.tweet.slice(0).reverse().map((each,i)=> {
-                    return <div>
+                    return <div className="TweetContainer">
                                 <h5>{each.tweet}</h5>
                                 <h6>posted by {each.username} on {each.time}</h6>
                            </div>
